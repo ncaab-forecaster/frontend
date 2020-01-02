@@ -1,13 +1,40 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
+import axios from 'axios';
 import "antd/es/layout/style/css";
 import "antd/es/breadcrumb/style/css";
+import "../styles/ComparePrediction.css";
 
 const ComparePrediction = props => {
+
+    const [projection, setProjection] = useState({away: 0, home: 0});
+
+    const awayObject = props.teamsAndIds && props.teamsAndIds.filter(team => team.name === props.selectedAway.name)
+    const homeObject = props.teamsAndIds && props.teamsAndIds.filter(team => team.name === props.selectedHome.name)
+
+    useEffect(() => {
+        props.teamsAndIds &&
+        axios
+          .get(
+            `https://model-ncaab.herokuapp.com/projections/?home=${homeObject.id}&away=${awayObject.id}`
+          )
+          .then(response => {
+            setProjection({away: response.data.away_projection, home: response.data.home_projection});
+          });
+      }, [props.teamsAndIds]);
+
+    console.log(awayObject);
+    console.log(homeObject);
+
   return (
-    <div>
-      <h1>{props.selectedTeams.team1}</h1>
-      <h1>{props.selectedTeams.team2}</h1>
-    </div>
+    <>
+      {props.selectedAway.name && props.selectedHome.name && (
+        <div className="cp-card">
+          <h1>
+            {props.selectedAway.name} {projection.away} {props.selectedHome.name} {projection.home}
+          </h1>
+        </div>
+      )}
+    </>
   );
 };
 

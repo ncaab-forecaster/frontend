@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import ComparePrediction from "./ComparePrediction";
 import Layout from "antd/es/layout";
 import "antd/es/layout/style/css";
@@ -12,14 +13,26 @@ const { Content } = Layout;
 const { Option } = Select;
 
 const Home = () => {
-  const [selectedTeams, setSelectedTeams] = useState({ team1: "", team2: "" });
+  const [teamsAndIds, setTeamsAndIds] = useState();
+  const [selectedAway, setSelectedAway] = useState({ name: "" });
+  const [selectedHome, setSelectedHome] = useState({ name: "" });
 
-  function onChangeOne(value) {
-    setSelectedTeams({ ...selectedTeams, team1: value})
+  useEffect(() => {
+    axios
+      .get(
+        "https://model-ncaab.herokuapp.com/teams/"
+      )
+      .then(response => {
+        setTeamsAndIds(response.data);
+      });
+  }, []);
+
+  function onChangeOne(value, key) {
+    setSelectedAway({ name: value });
   }
 
-  function onChangeTwo(value) {
-    setSelectedTeams({ ...selectedTeams, team2: value})
+  function onChangeTwo(value, key) {
+    setSelectedHome({ name: value });
   }
 
   // function onBlur() {
@@ -44,7 +57,7 @@ const Home = () => {
         >
           <div className="compare-select-fields">
             <div>
-              <h1>Home Team:</h1>
+              <h1>Away Team:</h1>
               <Select
                 showSearch
                 style={{ width: 200 }}
@@ -60,13 +73,14 @@ const Home = () => {
                     .indexOf(input.toLowerCase()) >= 0
                 }
               >
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="tom">Tom</Option>
+                {teamsAndIds &&
+                  teamsAndIds.map(teams => {
+                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                  })}
               </Select>
             </div>
             <div>
-              <h1>Away Team:</h1>
+              <h1>Home Team:</h1>
               <Select
                 showSearch
                 style={{ width: 200 }}
@@ -82,13 +96,14 @@ const Home = () => {
                     .indexOf(input.toLowerCase()) >= 0
                 }
               >
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="tom">Tom</Option>
+                {teamsAndIds &&
+                  teamsAndIds.map(teams => {
+                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                  })}
               </Select>
             </div>
           </div>
-          <ComparePrediction selectedTeams={selectedTeams} />
+          <ComparePrediction teamsAndIds={teamsAndIds} selectedAway={selectedAway} selectedHome={selectedHome}/>
         </div>
       </Content>
     </Layout>

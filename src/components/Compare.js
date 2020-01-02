@@ -1,31 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import ComparePrediction from "./ComparePrediction";
 import Layout from "antd/es/layout";
 import "antd/es/layout/style/css";
 import Breadcrumb from "antd/es/breadcrumb";
 import "antd/es/breadcrumb/style/css";
 import Select from "antd/es/select";
 import "antd/es/select/style/css";
-import '../styles/Compare.css';
+import "../styles/Compare.css";
 
 const { Content } = Layout;
 const { Option } = Select;
 
 const Home = () => {
-  function onChange(value) {
-    console.log(`selected ${value}`);
+  const [selectedTeams, setSelectedTeams] = useState({ team1: "", team2: "" });
+
+  function onChangeOne(value) {
+    setSelectedTeams({ ...selectedTeams, team1: value})
   }
 
-  function onBlur() {
-    console.log("blur");
+  function onChangeTwo(value) {
+    setSelectedTeams({ ...selectedTeams, team2: value})
   }
 
-  function onFocus() {
-    console.log("focus");
-  }
+  // function onBlur() {
+  //   console.log("blur");
+  // }
 
-  function onSearch(val) {
-    console.log("search:", val);
-  }
+  // function onFocus() {
+  //   console.log("focus");
+  // }
+
+  // function onSearch(val) {
+  //   console.log("search:", val);
+  // }
 
   return (
     <Layout className="layout">
@@ -43,10 +50,10 @@ const Home = () => {
                 style={{ width: 200 }}
                 placeholder="Select a person"
                 optionFilterProp="children"
-                onChange={onChange}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                onSearch={onSearch}
+                onChange={onChangeOne}
+                // onFocus={onFocus}
+                // onBlur={onBlur}
+                // onSearch={onSearch}
                 filterOption={(input, option) =>
                   option.props.children
                     .toLowerCase()
@@ -65,10 +72,10 @@ const Home = () => {
                 style={{ width: 200 }}
                 placeholder="Select a person"
                 optionFilterProp="children"
-                onChange={onChange}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                onSearch={onSearch}
+                onChange={onChangeTwo}
+                // onFocus={onFocus}
+                // onBlur={onBlur}
+                // onSearch={onSearch}
                 filterOption={(input, option) =>
                   option.props.children
                     .toLowerCase()
@@ -81,6 +88,7 @@ const Home = () => {
               </Select>
             </div>
           </div>
+          <ComparePrediction selectedTeams={selectedTeams} />
         </div>
       </Content>
     </Layout>

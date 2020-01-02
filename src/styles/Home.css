@@ -1,0 +1,21 @@
+.home-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.home-title {
+    font-size: 3rem;
+}
+
+.home-text {
+    width: 60%;
+    margin-bottom: 24px;
+}
+
+.main-image {
+    height: 300px;
+    border-radius: 10px;
+    
+}

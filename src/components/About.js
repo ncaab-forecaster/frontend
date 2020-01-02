@@ -6,7 +6,7 @@ import 'antd/es/breadcrumb/style/css'
 
 const { Content } = Layout;
 
-const Home = () => {
+const About = () => {
 
   return (
     <Layout className="layout">
@@ -16,10 +16,10 @@ const Home = () => {
         <Breadcrumb.Item>List</Breadcrumb.Item>
         <Breadcrumb.Item>App</Breadcrumb.Item> */}
       </Breadcrumb>
-      <div style={{ background: '#fff', padding: 24, minHeight: '80vh' }}>Home</div>
+      <div style={{ background: '#fff', padding: 24, minHeight: '80vh' }}>About</div>
     </Content>
   </Layout>
   );
 };
 
-export default Home;
+export default About;

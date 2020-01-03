@@ -9,9 +9,6 @@ import Layout from "antd/es/layout";
 import "antd/es/layout/style/css";
 import "../styles/MobileNavBar.css";
 
-// const { SubMenu } = Menu;
-// const { Header } = Layout;
-
 function MobileNavBar() {
   const [menu, setMenu] = useState({
     current: "mail"

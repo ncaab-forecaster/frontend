@@ -7,7 +7,12 @@ import "antd/es/card/style/css";
 import "../styles/ComparePrediction.css";
 
 const ComparePrediction = props => {
-  const [projection, setProjection] = useState({ away: 0, home: 0, awayName: '', homeName: '' });
+  const [projection, setProjection] = useState({
+    away: null,
+    home: null,
+    awayName: "",
+    homeName: ""
+  });
 
   useEffect(() => {
     if (props.selectedAway && props.selectedHome) {
@@ -18,33 +23,31 @@ const ComparePrediction = props => {
         .then(response => {
           setProjection({
             away: response.data.away_projection,
-            home: response.data.home_projection, 
+            home: response.data.home_projection,
             awayName: response.data.away_name,
-            homeName: response.data.home_name,
+            homeName: response.data.home_name
           });
         });
     }
-    
   }, [props.selectedAway, props.selectedHome]);
-
-
 
   return (
     <>
-      {!props.selectedHome && (
+      {!projection.away && !projection.home && (
         <Empty className="mobile-empty" style={{ margin: 50 }} />
       )}
-      {props.selectedAway && props.selectedHome && (
-        <Card className="cp-card">
-          <h1 className="cp-card-title">Projected Scores</h1>
-          <h2>
-            {projection.awayName}: {(projection.away).toFixed(2)}
-          </h2>
-          <h2>
-            {projection.homeName}: {(projection.home).toFixed(2)}
-          </h2>
-        </Card>
-      )}
+      {props.selectedAway &&
+        props.selectedHome &&
+        projection.away &&
+        projection.home && (
+          <Card className="cp-card">
+            <h1 className="cp-card-title">Projected Scores</h1>
+            <h2 className="cp-card-teams">
+              {projection.awayName}: {projection.away.toFixed(2)} @{" "}
+              {projection.homeName}: {projection.home.toFixed(2)}
+            </h2>
+          </Card>
+        )}
     </>
   );
 };

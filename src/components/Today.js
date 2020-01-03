@@ -39,10 +39,8 @@ const Today = () => {
             todayProjections.map((games, index) => {
               return (
                 <Card key={index} className="today-card">
-                  <h2>
-                    {games.away_name}: {games.away_projection.toFixed(2)}
-                  </h2>
-                  <h2>
+                  <h2 className="card-title">
+                    {games.away_name}: {games.away_projection.toFixed(2)} @{" "}
                     {games.home_name}: {games.home_projection.toFixed(2)}
                   </h2>
                 </Card>

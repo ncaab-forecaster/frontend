@@ -20,11 +20,10 @@ const About = () => {
   return (
     <Layout className="layout">
       <Content style={{ padding: "0 20px" }}>
-        <Breadcrumb className='about-bc' style={{ margin: "24px 0" }}>
-          {/* <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item> */}
-        </Breadcrumb>
+        <Breadcrumb
+          className="about-bc"
+          style={{ margin: "24px 0" }}
+        ></Breadcrumb>
         <div
           className="about-content"
           style={{ background: "#fff", padding: 24, minHeight: "80vh" }}
@@ -125,7 +124,7 @@ const About = () => {
           >
             <Meta
               title="George Hou"
-              description="George Hou is our Data Scientist who specializes in building regression models."
+              description="George Hou is our Data Engineer. He specializes in predictive statistics, machine learning and big data."
             />
           </Card>
           <Card

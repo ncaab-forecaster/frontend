@@ -4,7 +4,7 @@ import "antd/es/layout/style/css";
 
 const { Footer } = Layout;
 
-const Home = () => {
+const FooterComp = () => {
   return (
     <Layout className="layout">
       <Footer style={{ textAlign: "center" }}>
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default FooterComp;

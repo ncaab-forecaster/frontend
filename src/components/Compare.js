@@ -12,7 +12,7 @@ import "../styles/Compare.css";
 const { Content } = Layout;
 const { Option } = Select;
 
-const Home = () => {
+const Compare = () => {
   const [teamsAndIds, setTeamsAndIds] = useState();
   const [selectedAway, setSelectedAway] = useState(null);
   const [selectedHome, setSelectedHome] = useState(null);
@@ -48,7 +48,7 @@ const Home = () => {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Select a team"
                 optionFilterProp="children"
                 onChange={onChangeOne}
                 filterOption={(input, option) =>
@@ -72,12 +72,9 @@ const Home = () => {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Select a team"
                 optionFilterProp="children"
                 onChange={onChangeTwo}
-                // onFocus={onFocus}
-                // onBlur={onBlur}
-                // onSearch={onSearch}
                 filterOption={(input, option) =>
                   option.props.children
                     .toLowerCase()
@@ -117,7 +114,7 @@ const Home = () => {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Select a team"
                 optionFilterProp="children"
                 onChange={onChangeOne}
                 filterOption={(input, option) =>
@@ -141,12 +138,9 @@ const Home = () => {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Select a team"
                 optionFilterProp="children"
                 onChange={onChangeTwo}
-                // onFocus={onFocus}
-                // onBlur={onBlur}
-                // onSearch={onSearch}
                 filterOption={(input, option) =>
                   option.props.children
                     .toLowerCase()
@@ -175,4 +169,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Compare;

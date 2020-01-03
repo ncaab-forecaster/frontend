@@ -27,9 +27,9 @@ const Today = () => {
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div style={{ background: "#fff", padding: 24, minHeight: "80vh" }}>
           <h1 className='today-title'>Today's Projections</h1>
-          {todayProjections && todayProjections.map(games => {
+          {todayProjections && todayProjections.map((games, index) => {
             return (
-              <Card className='today-card'>
+              <Card key={index} className='today-card'>
                 <h2>
                   {games.away_name}: {games.away_projection}
                 </h2>

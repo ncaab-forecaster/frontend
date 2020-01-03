@@ -1,9 +1,9 @@
 import React, { useState,useEffect } from "react";
 import axios from 'axios';
+import Empty from 'antd/es/empty';
+import 'antd/es/empty/style/css';
 import Card from 'antd/es/card';
 import 'antd/es/card/style/css';
-import "antd/es/layout/style/css";
-import "antd/es/breadcrumb/style/css";
 import "../styles/ComparePrediction.css";
 
 const ComparePrediction = props => {
@@ -29,6 +29,9 @@ const ComparePrediction = props => {
 
   return (
     <>
+    {!props.selectedHome.name && (
+        <Empty style={{margin: 100}}/>
+      )}
       {props.selectedAway.name && props.selectedHome.name && (
         <Card className='cp-card'>
           <h1 className='cp-card-title'>Projected Scores</h1>

@@ -11,8 +11,6 @@ import Breadcrumb from "antd/es/breadcrumb";
 import "antd/es/breadcrumb/style/css";
 import Icon from "antd/es/icon";
 import "antd/es/icon/style/css";
-import Avatar from "antd/es/avatar";
-import "antd/es/avatar/style/css";
 import '../styles/About.css'
 
 const { Content } = Layout;
@@ -33,16 +31,16 @@ const About = () => {
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={william} />}
             actions={[
-              <a target="_blank" href="https://github.com/WilliamConnatser">
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/WilliamConnatser">
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/williamconnatser/"
               >
                 <Icon type="linkedin" key="linkedin" />
               </a>,
-              <a target="_blank" href="https://twitter.com/ConnatserW">
+              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/ConnatserW">
                 <Icon type="twitter" key="twitter" />
               </a>
             ]}
@@ -57,11 +55,11 @@ const About = () => {
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={brian} />}
             actions={[
-              <a target="_blank" href="https://github.com/BrianThomasRoss">
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/BrianThomasRoss">
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/brianthomasross/"
               >
                 <Icon type="linkedin" key="linkedin" />
@@ -78,16 +76,16 @@ const About = () => {
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={george} />}
             actions={[
-              <a target="_blank" href="https://github.com/gyhou">
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/gyhou">
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/gyhou/"
               >
                 <Icon type="linkedin" key="linkedin" />
               </a>,
-              <a target="_blank" href="https://twitter.com/gyhou">
+              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/gyhou">
               <Icon type="twitter" key="twitter" />
             </a>
             ]}
@@ -102,16 +100,16 @@ const About = () => {
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={samir} />}
             actions={[
-              <a target="_blank" href="https://github.com/samir-hub">
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/samir-hub">
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/samir-hub/"
               >
                 <Icon type="linkedin" key="linkedin" />
               </a>,
-              <a target="_blank" href="https://twitter.com/samirlilienfeld">
+              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/samirlilienfeld">
                 <Icon type="twitter" key="twitter" />
               </a>
             ]}

@@ -35,21 +35,9 @@ const Home = () => {
     setSelectedHome({ name: value });
   }
 
-  // function onBlur() {
-  //   console.log("blur");
-  // }
-
-  // function onFocus() {
-  //   console.log("focus");
-  // }
-
-  // function onSearch(val) {
-  //   console.log("search:", val);
-  // }
-
   return (
     <Layout className="layout">
-      <Content style={{ padding: "0 50px" }}>
+      <Content className='compare-desktop-content' style={{ padding: "0 50px" }}>
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div
           className="compare-main"
@@ -64,9 +52,59 @@ const Home = () => {
                 placeholder="Select a person"
                 optionFilterProp="children"
                 onChange={onChangeOne}
+                filterOption={(input, option) =>
+                  option.props.children
+                    .toLowerCase()
+                    .indexOf(input.toLowerCase()) >= 0
+                }
+              >
+                {teamsAndIds &&
+                  teamsAndIds.map(teams => {
+                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                  })}
+              </Select>
+            </div>
+            <div>
+              <h1>Home Team:</h1>
+              <Select
+                showSearch
+                style={{ width: 200 }}
+                placeholder="Select a person"
+                optionFilterProp="children"
+                onChange={onChangeTwo}
                 // onFocus={onFocus}
                 // onBlur={onBlur}
                 // onSearch={onSearch}
+                filterOption={(input, option) =>
+                  option.props.children
+                    .toLowerCase()
+                    .indexOf(input.toLowerCase()) >= 0
+                }
+              >
+                {teamsAndIds &&
+                  teamsAndIds.map(teams => {
+                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                  })}
+              </Select>
+            </div>
+          </div>
+          <ComparePrediction teamsAndIds={teamsAndIds} selectedAway={selectedAway} selectedHome={selectedHome}/>
+        </div>
+      </Content>
+      <Content className='compare-mobile-content' style={{ padding: "0 20px", height: '90vh' }}>
+      <div
+          className="compare-main"
+          style={{ background: "#fff", padding: 24, minHeight: "80vh" }}
+        >
+          <div className="compare-select-fields">
+            <div>
+              <h1>Away Team:</h1>
+              <Select
+                showSearch
+                style={{ width: 200 }}
+                placeholder="Select a person"
+                optionFilterProp="children"
+                onChange={onChangeOne}
                 filterOption={(input, option) =>
                   option.props.children
                     .toLowerCase()

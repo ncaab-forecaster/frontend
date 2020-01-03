@@ -2,3 +2,19 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+@media only screen and (max-width: 600px) {
+    .compare-desktop-content {
+      display: none;
+    }
+  }
+
+  .compare-mobile-content {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .compare-mobile-content {
+      display: block;
+    }
+  }

@@ -24,6 +24,7 @@ function App() {
           <Route  path="/about" component={About} />
         </Switch>
         <footer>
+          <FooterComp/>
           <MobileNavBar className="mobile-nav"/>
         </footer>
       </BrowserRouter>

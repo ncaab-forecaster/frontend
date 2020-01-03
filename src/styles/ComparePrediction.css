@@ -11,3 +11,19 @@
 .ant-card-body {
     width: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+    .mobile-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .cp-card {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+  }

@@ -15,7 +15,7 @@ const { Meta } = Card;
 const Home = () => {
   return (
     <Layout className="layout">
-      <Content className="home-desktop-content" style={{ padding: "0 50px" }}>
+      <Content className="home-desktop-content" style={{ padding: "0 20px" }}>
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div
           className="home-div"
@@ -41,13 +41,12 @@ const Home = () => {
         style={{ padding: "0 20px", height: "95vh" }}
       >
         <Card
-          cardStyle={{ margin: 0, "min-height": "80%" }}
           className="home-mobile-card"
           style={{
             width: "92%",
-            "margin-left": 15,
-            "margin-right": 0,
-            "margin-top": 50
+            marginLeft: 15,
+            marginRight: 0,
+            marginTop: 50
           }}
           cover={<img alt="example" src={homebasket} />}
         >

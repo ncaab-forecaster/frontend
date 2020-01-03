@@ -18,3 +18,12 @@
       display: block;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    .compare-select-fields {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+  }

@@ -14,8 +14,8 @@ const { Option } = Select;
 
 const Home = () => {
   const [teamsAndIds, setTeamsAndIds] = useState();
-  const [selectedAway, setSelectedAway] = useState({ name: "" });
-  const [selectedHome, setSelectedHome] = useState({ name: "" });
+  const [selectedAway, setSelectedAway] = useState(null);
+  const [selectedHome, setSelectedHome] = useState(null);
 
   useEffect(() => {
     axios.get("https://model-ncaab.herokuapp.com/teams/").then(response => {
@@ -24,18 +24,18 @@ const Home = () => {
   }, []);
 
   function onChangeOne(value, key) {
-    setSelectedAway({ name: value });
+    setSelectedAway(value);
   }
 
   function onChangeTwo(value, key) {
-    setSelectedHome({ name: value });
+    setSelectedHome(value);
   }
 
   return (
     <Layout className="layout">
       <Content
         className="compare-desktop-content"
-        style={{ padding: "0 50px" }}
+        style={{ padding: "0 20px" }}
       >
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div
@@ -60,7 +60,7 @@ const Home = () => {
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
                     return (
-                      <Option key={teams.id} value={teams.name}>
+                      <Option key={teams.id} value={teams.id}>
                         {teams.name}
                       </Option>
                     );
@@ -87,7 +87,7 @@ const Home = () => {
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
                     return (
-                      <Option key={teams.id} value={teams.name}>
+                      <Option key={teams.id} value={teams.id}>
                         {teams.name}
                       </Option>
                     );
@@ -106,6 +106,7 @@ const Home = () => {
         className="compare-mobile-content"
         style={{ padding: "0 20px", height: "90vh" }}
       >
+        <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div
           className="compare-main"
           style={{ background: "#fff", padding: 24, minHeight: "80vh" }}
@@ -128,7 +129,7 @@ const Home = () => {
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
                     return (
-                      <Option key={teams.id} value={teams.name}>
+                      <Option key={teams.id} value={teams.id}>
                         {teams.name}
                       </Option>
                     );
@@ -155,7 +156,7 @@ const Home = () => {
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
                     return (
-                      <Option key={teams.id} value={teams.name}>
+                      <Option key={teams.id} value={teams.id}>
                         {teams.name}
                       </Option>
                     );

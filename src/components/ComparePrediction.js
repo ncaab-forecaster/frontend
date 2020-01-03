@@ -7,44 +7,41 @@ import "antd/es/card/style/css";
 import "../styles/ComparePrediction.css";
 
 const ComparePrediction = props => {
-  const [projection, setProjection] = useState({ away: 0, home: 0 });
-
-  const awayObject =
-    props.teamsAndIds &&
-    props.teamsAndIds.filter(team => team.name === props.selectedAway.name);
-  const homeObject =
-    props.teamsAndIds &&
-    props.teamsAndIds.filter(team => team.name === props.selectedHome.name);
+  const [projection, setProjection] = useState({ away: 0, home: 0, awayName: '', homeName: '' });
 
   useEffect(() => {
-    props.teamsAndIds &&
+    if (props.selectedAway && props.selectedHome) {
       axios
         .get(
-          `https://model-ncaab.herokuapp.com/projections/?home=${homeObject.id}&away=${awayObject.id}`
+          `https://model-ncaab.herokuapp.com/projections/?home=${props.selectedHome}&away=${props.selectedAway}`
         )
         .then(response => {
           setProjection({
             away: response.data.away_projection,
-            home: response.data.home_projection
+            home: response.data.home_projection, 
+            awayName: response.data.away_name,
+            homeName: response.data.home_name,
           });
         });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.teamsAndIds]);
+    }
+    
+  }, [props.selectedAway, props.selectedHome]);
 
-  console.log(awayObject);
-  console.log(homeObject);
+
 
   return (
     <>
-      {!props.selectedHome.name && <Empty style={{ margin: 100 }} />}
-      {props.selectedAway.name && props.selectedHome.name && (
+      {!props.selectedHome && (
+        <Empty className="mobile-empty" style={{ margin: 50 }} />
+      )}
+      {props.selectedAway && props.selectedHome && (
         <Card className="cp-card">
           <h1 className="cp-card-title">Projected Scores</h1>
           <h2>
-            {props.selectedAway.name}: {projection.away}
+            {projection.awayName}: {(projection.away).toFixed(2)}
           </h2>
           <h2>
-            {props.selectedHome.name}: {projection.home}
+            {projection.homeName}: {(projection.home).toFixed(2)}
           </h2>
         </Card>
       )}

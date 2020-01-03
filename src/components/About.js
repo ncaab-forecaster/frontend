@@ -19,8 +19,8 @@ const { Meta } = Card;
 const About = () => {
   return (
     <Layout className="layout">
-      <Content style={{ padding: "0 50px" }}>
-        <Breadcrumb style={{ margin: "24px 0" }}>
+      <Content style={{ padding: "0 20px" }}>
+        <Breadcrumb className='about-bc' style={{ margin: "24px 0" }}>
           {/* <Breadcrumb.Item>Home</Breadcrumb.Item>
         <Breadcrumb.Item>List</Breadcrumb.Item>
         <Breadcrumb.Item>App</Breadcrumb.Item> */}

@@ -6,24 +6,34 @@ import Layout from "antd/es/layout";
 import "antd/es/layout/style/css";
 import Breadcrumb from "antd/es/breadcrumb";
 import "antd/es/breadcrumb/style/css";
+import Spin from "antd/es/spin";
+import "antd/es/spin/style/css";
 import "../styles/Today.css";
 
 const { Content } = Layout;
 
 const Today = () => {
   const [todayProjections, setTodayProjections] = useState();
+  const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
     axios
       .get("https://model-ncaab.herokuapp.com/projections/")
       .then(response => {
         setTodayProjections(response.data);
+        setIsFetching(false);
       });
   }, []);
 
-  return (
+  return isFetching ? (
+  
+    <div className="shot-spinner spinner">
+      <Spin size="large" />
+    </div>
+
+  ) : (
     <Layout className="layout">
-      <Content style={{ padding: "0 50px" }}>
+      <Content style={{ padding: "0 20px" }}>
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div style={{ background: "#fff", padding: 24, minHeight: "80vh" }}>
           <h1 className="today-title">Today's Projections</h1>
@@ -32,10 +42,10 @@ const Today = () => {
               return (
                 <Card key={index} className="today-card">
                   <h2>
-                    {games.away_name}: {games.away_projection}
+                    {games.away_name}: {games.away_projection.toFixed(2)}
                   </h2>
                   <h2>
-                    {games.home_name}: {games.home_projection}
+                    {games.home_name}: {games.home_projection.toFixed(2)}
                   </h2>
                 </Card>
               );

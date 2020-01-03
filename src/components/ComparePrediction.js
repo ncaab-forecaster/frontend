@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from "react";
 import axios from 'axios';
+import Card from 'antd/es/card';
+import 'antd/es/card/style/css';
 import "antd/es/layout/style/css";
 import "antd/es/breadcrumb/style/css";
 import "../styles/ComparePrediction.css";
@@ -28,11 +30,15 @@ const ComparePrediction = props => {
   return (
     <>
       {props.selectedAway.name && props.selectedHome.name && (
-        <div className="cp-card">
-          <h1>
-            {props.selectedAway.name} {projection.away} {props.selectedHome.name} {projection.home}
-          </h1>
-        </div>
+        <Card className='cp-card'>
+          <h1 className='cp-card-title'>Projected Scores</h1>
+          <h2>
+            {props.selectedAway.name}: {projection.away}
+          </h2>
+          <h2>
+            {props.selectedHome.name}: {projection.home} 
+          </h2>
+        </Card>
       )}
     </>
   );

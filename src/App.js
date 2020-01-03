@@ -7,13 +7,14 @@ import Compare from './components/Compare';
 import Today from './components/Today';
 import About from './components/About';
 import FooterComp from './components/FooterComp';
+import MobileNavBar from './components/MobileNavBar';
 
 
 function App() {
   return (
     <div className="app-container">
       <BrowserRouter>
-      <header className="main-header">
+      <header className="desktop-header">
           <HeaderComp/>
         </header>
         <Switch>
@@ -23,7 +24,7 @@ function App() {
           <Route  path="/about" component={About} />
         </Switch>
         <footer>
-          <FooterComp/>
+          <MobileNavBar className="mobile-nav"/>
         </footer>
       </BrowserRouter>
     </div>

@@ -19,3 +19,20 @@
     border-radius: 10px;
     
 }
+
+@media only screen and (max-width: 600px) {
+    .home-desktop-content {
+      display: none;
+    }
+  }
+
+  .home-mobile-content {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .home-mobile-content {
+      display: block;
+    }
+  }
+

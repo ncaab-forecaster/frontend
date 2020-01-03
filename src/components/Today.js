@@ -26,11 +26,9 @@ const Today = () => {
   }, []);
 
   return isFetching ? (
-  
     <div className="shot-spinner spinner">
       <Spin size="large" />
     </div>
-
   ) : (
     <Layout className="layout">
       <Content style={{ padding: "0 20px" }}>

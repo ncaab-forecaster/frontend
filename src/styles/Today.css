@@ -1,0 +1,9 @@
+.today-card {
+    display: flex;
+    justify-content: flex-start;
+    margin: 50px 350px;
+}
+
+.today-title {
+    text-align: center;
+}

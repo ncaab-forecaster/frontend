@@ -1,8 +1,8 @@
 import React from "react";
 import william from "../william.jpg";
-import brian from '../brian.jpg';
-import george from '../george.jpg';
-import samir from '../samir.jpg';
+import brian from "../brian.jpg";
+import george from "../george.jpg";
+import samir from "../samir.jpg";
 import Card from "antd/es/card";
 import "antd/es/card/style/css";
 import Layout from "antd/es/layout";
@@ -11,7 +11,7 @@ import Breadcrumb from "antd/es/breadcrumb";
 import "antd/es/breadcrumb/style/css";
 import Icon from "antd/es/icon";
 import "antd/es/icon/style/css";
-import '../styles/About.css'
+import "../styles/About.css";
 
 const { Content } = Layout;
 const { Meta } = Card;
@@ -25,22 +25,34 @@ const About = () => {
         <Breadcrumb.Item>List</Breadcrumb.Item>
         <Breadcrumb.Item>App</Breadcrumb.Item> */}
         </Breadcrumb>
-        <div className='about-content' style={{ background: "#fff", padding: 24, minHeight: "80vh" }}>
+        <div
+          className="about-content"
+          style={{ background: "#fff", padding: 24, minHeight: "80vh" }}
+        >
           <Card
-          className='about-card'
+            className="about-card"
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={william} />}
             actions={[
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/WilliamConnatser">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/WilliamConnatser"
+              >
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/williamconnatser/"
               >
                 <Icon type="linkedin" key="linkedin" />
               </a>,
-              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/ConnatserW">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/ConnatserW"
+              >
                 <Icon type="twitter" key="twitter" />
               </a>
             ]}
@@ -51,19 +63,31 @@ const About = () => {
             />
           </Card>
           <Card
-          className='about-card'
+            className="about-card"
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={brian} />}
             actions={[
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/BrianThomasRoss">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/BrianThomasRoss"
+              >
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/brianthomasross/"
               >
                 <Icon type="linkedin" key="linkedin" />
               </a>,
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/BrianThomasRoss"
+              >
+                <Icon type="twitter" key="twitter" />
+              </a>
             ]}
           >
             <Meta
@@ -72,22 +96,31 @@ const About = () => {
             />
           </Card>
           <Card
-          className='about-card'
+            className="about-card"
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={george} />}
             actions={[
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/gyhou">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/gyhou"
+              >
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/gyhou/"
               >
                 <Icon type="linkedin" key="linkedin" />
               </a>,
-              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/gyhou">
-              <Icon type="twitter" key="twitter" />
-            </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/gyhou"
+              >
+                <Icon type="twitter" key="twitter" />
+              </a>
             ]}
           >
             <Meta
@@ -96,20 +129,29 @@ const About = () => {
             />
           </Card>
           <Card
-          className='about-card'
+            className="about-card"
             style={{ width: 300, margin: 20 }}
             cover={<img alt="example" src={samir} />}
             actions={[
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/samir-hub">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/samir-hub"
+              >
                 <Icon type="github" key="github" />
               </a>,
               <a
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/samir-hub/"
               >
                 <Icon type="linkedin" key="linkedin" />
               </a>,
-              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/samirlilienfeld">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/samirlilienfeld"
+              >
                 <Icon type="twitter" key="twitter" />
               </a>
             ]}

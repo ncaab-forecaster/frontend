@@ -18,13 +18,9 @@ const Home = () => {
   const [selectedHome, setSelectedHome] = useState({ name: "" });
 
   useEffect(() => {
-    axios
-      .get(
-        "https://model-ncaab.herokuapp.com/teams/"
-      )
-      .then(response => {
-        setTeamsAndIds(response.data);
-      });
+    axios.get("https://model-ncaab.herokuapp.com/teams/").then(response => {
+      setTeamsAndIds(response.data);
+    });
   }, []);
 
   function onChangeOne(value, key) {
@@ -37,7 +33,10 @@ const Home = () => {
 
   return (
     <Layout className="layout">
-      <Content className='compare-desktop-content' style={{ padding: "0 50px" }}>
+      <Content
+        className="compare-desktop-content"
+        style={{ padding: "0 50px" }}
+      >
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div
           className="compare-main"
@@ -60,7 +59,11 @@ const Home = () => {
               >
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
-                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                    return (
+                      <Option key={teams.id} value={teams.name}>
+                        {teams.name}
+                      </Option>
+                    );
                   })}
               </Select>
             </div>
@@ -83,16 +86,27 @@ const Home = () => {
               >
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
-                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                    return (
+                      <Option key={teams.id} value={teams.name}>
+                        {teams.name}
+                      </Option>
+                    );
                   })}
               </Select>
             </div>
           </div>
-          <ComparePrediction teamsAndIds={teamsAndIds} selectedAway={selectedAway} selectedHome={selectedHome}/>
+          <ComparePrediction
+            teamsAndIds={teamsAndIds}
+            selectedAway={selectedAway}
+            selectedHome={selectedHome}
+          />
         </div>
       </Content>
-      <Content className='compare-mobile-content' style={{ padding: "0 20px", height: '90vh' }}>
-      <div
+      <Content
+        className="compare-mobile-content"
+        style={{ padding: "0 20px", height: "90vh" }}
+      >
+        <div
           className="compare-main"
           style={{ background: "#fff", padding: 24, minHeight: "80vh" }}
         >
@@ -113,7 +127,11 @@ const Home = () => {
               >
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
-                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                    return (
+                      <Option key={teams.id} value={teams.name}>
+                        {teams.name}
+                      </Option>
+                    );
                   })}
               </Select>
             </div>
@@ -136,12 +154,20 @@ const Home = () => {
               >
                 {teamsAndIds &&
                   teamsAndIds.map(teams => {
-                    return <Option key={teams.id} value={teams.name}>{teams.name}</Option>;
+                    return (
+                      <Option key={teams.id} value={teams.name}>
+                        {teams.name}
+                      </Option>
+                    );
                   })}
               </Select>
             </div>
           </div>
-          <ComparePrediction teamsAndIds={teamsAndIds} selectedAway={selectedAway} selectedHome={selectedHome}/>
+          <ComparePrediction
+            teamsAndIds={teamsAndIds}
+            selectedAway={selectedAway}
+            selectedHome={selectedHome}
+          />
         </div>
       </Content>
     </Layout>

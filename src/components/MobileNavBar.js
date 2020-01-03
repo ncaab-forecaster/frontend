@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Icon from 'antd/es/icon';
-import 'antd/es/icon/style/css';
+import Icon from "antd/es/icon";
+import "antd/es/icon/style/css";
 import "antd/es/icon/style/css";
 import Menu from "antd/es/menu";
 import "antd/es/menu/style/css";
@@ -31,19 +31,27 @@ function MobileNavBar() {
         theme="light"
         onClick={handleClick}
         selectedKeys={[menu.current]}
-        style={{ height: "100%", borderRight: 0, }}
+        style={{ height: "100%", borderRight: 0 }}
       >
         <Menu.Item className="m-1" key="mail">
-          <Link to="/"><Icon style={{ fontSize: '25px' }} type="home" /></Link>
+          <Link to="/">
+            <Icon style={{ fontSize: "25px" }} type="home" />
+          </Link>
         </Menu.Item>
         <Menu.Item className="m-1" key="player">
-          <Link to="/compare"><Icon  style={{ fontSize: '25px' }} type="dribbble" /></Link>
+          <Link to="/compare">
+            <Icon style={{ fontSize: "25px" }} type="dribbble" />
+          </Link>
         </Menu.Item>
         <Menu.Item className="m-1" key="standings">
-          <Link to="/today"><Icon style={{ fontSize: '25px' }} type="calendar" /></Link>
+          <Link to="/today">
+            <Icon style={{ fontSize: "25px" }} type="calendar" />
+          </Link>
         </Menu.Item>
         <Menu.Item className="m-1" key="shot">
-          <Link to="/about"><Icon style={{ fontSize: '25px' }} type="info-circle" /></Link>
+          <Link to="/about">
+            <Icon style={{ fontSize: "25px" }} type="info-circle" />
+          </Link>
         </Menu.Item>
       </Menu>
 

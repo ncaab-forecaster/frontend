@@ -1,0 +1,8 @@
+.about-content {
+    display: flex;
+    justify-content: center;
+}
+
+.about-card {
+    max-height: 450px;
+}

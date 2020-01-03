@@ -1,0 +1,13 @@
+.cp-card {
+    display: flex;
+    justify-content: flex-start;
+    margin: 50px 350px;
+}
+
+.cp-card-title {
+    text-align: center;
+}
+
+.ant-card-body {
+    width: 100%;
+}

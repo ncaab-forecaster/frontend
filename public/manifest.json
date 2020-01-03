@@ -1,5 +1,6 @@
 {
- "name": "App",
+"short_name": "NCAAB Predictor",
+"name": "NCAAB Predictor",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -37,5 +38,9 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+ ],
+ "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#001529",
+  "background_color": "#001529"
 }

@@ -8,9 +8,8 @@ const FooterComp = () => {
   return (
     <Layout className="layout">
       <Footer style={{ textAlign: "center" }}>
-        NCAAB Predictor ©2020 Created by Samir, William, Brian and George.{" "}
-        <br />
-        For entertainment pusposes only.
+        Score Genie ©2020 Created by Samir, William, Brian and George. <br />
+        For entertainment purposes only.
       </Footer>
     </Layout>
   );

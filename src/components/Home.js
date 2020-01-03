@@ -23,9 +23,9 @@ const Home = () => {
         >
           <h1 className="home-title">We Predict Scores</h1>
           <h3 className="home-text">
-            NCAAB Predictor uses historical data and advanced Data Science to
-            predict Division I NCAA basketball scores. You can select any two
-            teams in <NavLink to="/compare">Compare</NavLink> or check out the
+            Score Genie uses cutting edge machine learning algorithms to predict
+            Division I NCAA basketball scores. You can select any two teams in{" "}
+            <NavLink to="/compare">Compare</NavLink> or check out the
             predictions for today's games in{" "}
             <NavLink to="/today"> Today</NavLink>.
           </h3>
@@ -52,8 +52,7 @@ const Home = () => {
         >
           <h2 className="cta-heading">We Predict Scores</h2>
           <Meta
-            description={`NCAAB Predictor uses historical data and advanced Data Science to
-            predict Division I NCAA basketball scores. You can select any two
+            description={`Score Genie uses cutting edge machine learning algorithms to predict Division I NCAA basketball scores. You can select any two
             teams or check out the predictions for today's games.`}
           />
         </Card>

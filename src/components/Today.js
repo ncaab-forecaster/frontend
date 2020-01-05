@@ -9,11 +9,14 @@ import "antd/es/breadcrumb/style/css";
 import Spin from "antd/es/spin";
 import "antd/es/spin/style/css";
 import "../styles/Today.css";
+import SearchForm from "./SearchForm";
+import "../styles/Today.css";
 
 const { Content } = Layout;
 
 const Today = () => {
   const [todayProjections, setTodayProjections] = useState();
+  const [dataToDisplay, setDataToDisplay] = useState();
   const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
@@ -25,6 +28,10 @@ const Today = () => {
       });
   }, []);
 
+  useEffect(() => {
+    todayProjections && setDataToDisplay(todayProjections);
+  }, [todayProjections]);
+
   return isFetching ? (
     <div className="shot-spinner spinner">
       <Spin size="large" />
@@ -35,8 +42,13 @@ const Today = () => {
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div style={{ background: "#fff", padding: 24, minHeight: "80vh" }}>
           <h1 className="today-title">Today's Projections</h1>
+          <SearchForm
+            className='today-search'
+            data={todayProjections}
+            setDataToDisplay={setDataToDisplay}
+          />
           {todayProjections &&
-            todayProjections.map((games, index) => {
+            dataToDisplay.map((games, index) => {
               return (
                 <Card key={index} className="today-card">
                   <h2 className="card-title">

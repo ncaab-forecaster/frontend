@@ -38,30 +38,40 @@ const Today = () => {
     </div>
   ) : (
     <Layout className="layout">
-      <Content  style={{ padding: "0 20px" }}>
+      <Content style={{ padding: "0 20px" }}>
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
-        <div className='today-content' style={{ background: "#fff", padding: 24, minHeight: "80vh" }}>
+        <div
+          className="today-content"
+          style={{ background: "#fff", padding: 24, minHeight: "80vh" }}
+        >
           <h1 className="today-title">Today's Projections</h1>
           <SearchForm
-            className='today-search'
+            className="today-search"
             data={todayProjections}
             setDataToDisplay={setDataToDisplay}
           />
-          {todayProjections &&
-            dataToDisplay.map((games, index) => {
-              return (
-                <div key={index} className="today-card">
-                  <div className="today-card-away"> 
-                  <p>{games.away_name} {games.away_projection.toFixed(2)}</p>
+          <div className="today-card-container">
+            {todayProjections &&
+              dataToDisplay.map((games, index) => {
+                return (
+                  <div key={index} className="today-card">
+                    <div className="today-card-away">
+                      <p>
+                        {games.away_name} {games.away_projection.toFixed(2)}
+                      </p>
+                    </div>
+                    <div>
+                      <p>@</p>
+                    </div>
+                    <div className="today-card-home">
+                      <p>
+                        {games.home_projection.toFixed(2)} {games.home_name}
+                      </p>
+                    </div>
                   </div>
-                  <div><p>@</p></div>
-                  <div className="today-card-home">
-                  <p>{games.home_projection.toFixed(2)} {games.home_name}</p>
-                  </div>
-                 
-                </div>
-              );
-            })}
+                );
+              })}
+          </div>
         </div>
       </Content>
     </Layout>

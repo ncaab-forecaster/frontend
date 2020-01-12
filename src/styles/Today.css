@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
 }
 
 .today-card-container {
@@ -23,13 +24,46 @@
 .today-card-away {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     min-width: 40%;
+    max-width: 42%;
+}
+
+.today-card-home{
+    display: flex;
+    align-items: center;
+}
+
+.today-card-at {
+    display: flex;
+    align-items: center;
+    margin: 0; 
+    font-size: 1.1rem;
 }
 
 .today-card-home {
     display: flex;
     justify-content: flex-end;
     min-width: 40%;
+    max-width: 40%;
+}
+
+.today-card-name {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.today-card-score {
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: 470;
+    
+}
+
+.today-card-at-div{
+    display: flex;
+    align-items: center;
 }
 
 .today-title {

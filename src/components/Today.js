@@ -38,7 +38,7 @@ const Today = () => {
     </div>
   ) : (
     <Layout className="layout">
-      <Content style={{ padding: "0 20px" }}>
+      <Content>
         <Breadcrumb style={{ margin: "24px 0" }}></Breadcrumb>
         <div
           className="today-content"
@@ -56,17 +56,19 @@ const Today = () => {
                 return (
                   <div key={index} className="today-card">
                     <div className="today-card-away">
-                      <p>
-                        {games.away_name} {games.away_projection.toFixed(2)}
+                      <p className="today-card-name">{games.away_name}</p>
+                      <p className="today-card-score">
+                        {games.away_projection.toFixed(2)}
                       </p>
                     </div>
-                    <div>
-                      <p>@</p>
+                    <div className="today-card-at-div">
+                      <p className="today-card-at">@</p>
                     </div>
                     <div className="today-card-home">
-                      <p>
-                        {games.home_projection.toFixed(2)} {games.home_name}
+                      <p className="today-card-score">
+                        {games.home_projection.toFixed(2)}
                       </p>
+                      <p className="today-card-name"> {games.home_name}</p>
                     </div>
                   </div>
                 );

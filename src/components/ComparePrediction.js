@@ -36,18 +36,20 @@ const ComparePrediction = props => {
       {!projection.away && !projection.home && (
         <Empty className="mobile-empty" style={{ margin: 50 }} />
       )}
-      {props.selectedAway &&
-        props.selectedHome &&
-        projection.away &&
-        projection.home && (
-          <Card className="cp-card">
-            <h1 className="cp-card-title">Projected Scores</h1>
-            <h2 className="cp-card-teams">
-              {projection.awayName}: {projection.away.toFixed(2)} @{" "}
-              {projection.homeName}: {projection.home.toFixed(2)}
-            </h2>
-          </Card>
-        )}
+      <div className="cp-card-container">
+        {props.selectedAway &&
+          props.selectedHome &&
+          projection.away &&
+          projection.home && (
+            <Card className="cp-card">
+              <h1 className="cp-card-title">Projected Scores</h1>
+              <h2 className="cp-card-teams">
+                {projection.awayName}: {projection.away.toFixed(2)} @{" "}
+                {projection.homeName}: {projection.home.toFixed(2)}
+              </h2>
+            </Card>
+          )}
+      </div>
     </>
   );
 };

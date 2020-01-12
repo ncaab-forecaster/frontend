@@ -1,7 +1,17 @@
+.cp-card-container {
+  display: flex;
+  justify-content: center;
+}
+
 .cp-card {
-    display: flex;
-    justify-content: flex-start;
-    margin: 50px 350px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 45%;
+  border: .8px solid gray;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 4px;
+  box-shadow: 2.5px 2px 3px -2px rgba(0,0,0,0.75);
 }
 
 .cp-card-title {

@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Form from 'antd/es/form';
+import 'antd/es/form/style/css';
+import Input from 'antd/es/input';
+import 'antd/es/input/style/css';
 import "../styles/SearchForm.css";
 
 export default function SearchForm(props) {
@@ -20,8 +24,8 @@ export default function SearchForm(props) {
   }, [searchTerm, setSearchResults, dataToSearch]);
 
   return (
-    <form className="search-form">
-      <input placeholder="Search" value={searchTerm} onChange={handleChange} />
-    </form>
+    <Form className="search-form">
+      <Input placeholder="Search" value={searchTerm} onChange={handleChange} />
+    </Form>
   );
 }
